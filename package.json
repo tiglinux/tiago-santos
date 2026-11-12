@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy:ghdocs": "ng build --output-path=docs --base-href=/tiago-santos/"
+    "deploy:ghdocs": "ng build --output-path=docs --base-href=/tiago-santos/",
+    "build:gh-pages": "ng build --output-path=docs --base-href=/tiago-santos/ && cp -r docs/browser/* docs/ && rm -rf docs/browser && cp docs/index.html docs/404.html"
   },
   "private": true,
   "packageManager": "npm@11.19.0",
