@@ -226,93 +226,106 @@ interface Experience {
 
       <main class="w-full min-w-0 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 py-12">
         <!-- HERO SECTION -->
-        <section id="hero" class="min-h-[85vh] flex flex-col justify-center pt-6">
-          <div class="grid lg:grid-cols-12 gap-12 items-center">
-            <!-- Hero Text Content -->
-            <div class="lg:col-span-7 flex flex-col items-start">
-              <div class="max-w-full inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-mono text-xs font-semibold mb-6">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                {{ t().hero.badge }}
-              </div>
+        <!-- HERO SECTION -->
+<section id="hero" class="min-h-[85vh] flex flex-col justify-center pt-6">
+  <div class="grid lg:grid-cols-12 gap-12 items-center">
+    <!-- Hero Text Content -->
+    <div class="lg:col-span-7 flex flex-col items-start">
+      <div
+        class="max-w-full inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-mono text-xs font-semibold mb-6"
+      >
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        {{ t().hero.badge }}
+      </div>
 
-              <h1 class="max-w-full break-words [overflow-wrap:anywhere] text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
-                {{ t().hero.greeting }}
-                <span class="text-indigo-600 dark:text-indigo-400">Tiago Santos</span>.<br />
-                {{ t().hero.building }}
-                <span class="border-b-4 border-indigo-500/60 pb-1">{{ currentText() }}</span><span
-                  class="animate-pulse font-light text-indigo-500"
-                  >|</span
-                >
-              </h1>
+      <h1
+        class="max-w-full break-words [overflow-wrap:anywhere] text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight"
+      >
+        {{ t().hero.greeting }}
+        <span class="text-indigo-600 dark:text-indigo-400">Tiago Santos</span>.<br />
+        {{ t().hero.building }}
+        <span class="border-b-4 border-indigo-500/60 pb-1">{{ currentText() }}</span
+        ><span class="animate-pulse font-light text-indigo-500">|</span>
+      </h1>
 
-              <p
-                class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mb-8 leading-relaxed"
-                [innerHTML]="t().hero.bio"
-              ></p>
+      <p
+        class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mb-8 leading-relaxed"
+        [innerHTML]="t().hero.bio"
+      ></p>
 
-              <div class="flex flex-wrap gap-4 items-center">
-                <a
-                  href="#projects"
-                  class="px-6 py-3 rounded-xl font-medium text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-500/25 flex items-center gap-2"
-                >
-                  {{ t().hero.viewWork }}
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                    ></path>
-                  </svg>
-                </a>
-                <a
-                  href="#contact"
-                  class="px-6 py-3 rounded-xl font-medium text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all"
-                >
-                  {{ t().hero.contactMe }}
-                </a>
-              </div>
-            </div>
-          </div>
+      <div class="flex flex-wrap gap-4 items-center">
+        <a
+          href="#projects"
+          class="px-6 py-3 rounded-xl font-medium text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-500/25 flex items-center gap-2"
+        >
+          {{ t().hero.viewWork }}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </a>
+        <a
+          href="#contact"
+          class="px-6 py-3 rounded-xl font-medium text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all"
+        >
+          {{ t().hero.contactMe }}
+        </a>
+      </div>
+    </div>
 
-          <!-- Quick Stats Bar -->
-          <div
-            class="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full mt-16 pt-8 border-t border-slate-200 dark:border-slate-800"
-          >
-            <div>
-              <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">
-                15+
-              </div>
-              <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
-                {{ t().hero.stats.exp }}
-              </div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">
-                30+
-              </div>
-              <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
-                {{ t().hero.stats.projects }}
-              </div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">
-                99%
-              </div>
-              <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
-                {{ t().hero.stats.uptime }}
-              </div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">
-                100%
-              </div>
-              <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
-                {{ t().hero.stats.code }}
-              </div>
-            </div>
-          </div>
-        </section>
+    <!-- Hero Profile Image -->
+    <div class="lg:col-span-5 flex justify-center lg:justify-end">
+      <div class="relative group w-64 sm:w-80 max-w-full">
+        <div
+          class="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-indigo-600 via-purple-500 to-cyan-400 opacity-35 blur-lg group-hover:opacity-60 transition duration-500"
+        ></div>
+        <div
+          class="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900 shadow-2xl aspect-[3/4]"
+        >
+          <img
+            src="foto.png"
+            alt="Tiago Santos"
+            class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Stats Bar -->
+  <div
+    class="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full mt-16 pt-8 border-t border-slate-200 dark:border-slate-800"
+  >
+    <div>
+      <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">15+</div>
+      <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
+        {{ t().hero.stats.exp }}
+      </div>
+    </div>
+    <div>
+      <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">30+</div>
+      <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
+        {{ t().hero.stats.projects }}
+      </div>
+    </div>
+    <div>
+      <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">99%</div>
+      <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
+        {{ t().hero.stats.uptime }}
+      </div>
+    </div>
+    <div>
+      <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">100%</div>
+      <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
+        {{ t().hero.stats.code }}
+      </div>
+    </div>
+  </div>
+</section>
 
         <!-- ABOUT SECTION -->
         <section id="about" class="scroll-mt-24">
@@ -717,7 +730,7 @@ interface Experience {
               <!-- Social Links -->
               <div class="pt-4 flex items-center gap-3">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/tiglinux"
                   target="_blank"
                   class="p-3 rounded-xl bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors"
                 >
@@ -728,7 +741,7 @@ interface Experience {
                   </svg>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/tiagoribeirosantos/"
                   target="_blank"
                   class="p-3 rounded-xl bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors"
                 >
@@ -825,7 +838,7 @@ interface Experience {
         >
           <div>&copy; 2026 Tiago Santos. All rights reserved.</div>
           <div class="flex items-center gap-1">
-            <span>Built with Angular & Tailwind CSS</span>
+            <span>Built with Angular 20 , TypeScript & Tailwind CSS</span>
           </div>
         </div>
       </footer>
@@ -1044,58 +1057,108 @@ export class App implements AfterViewInit, OnDestroy {
 
   projectsData: Project[] = [
     {
-      id: 'banking-core',
-      title: 'Enterprise Banking Core System',
+      id: 'event-driven-sales-tickets',
+      title: 'Ticket Sales Producer & Sales Processing Consumer',
       description:
-        'High-availability backend architecture processing millions of daily transactions securely for major financial institutions.',
+        'Event-driven asynchronous architecture decoupling ticket sales event production from sales order consumption.',
       longDescription:
-        'Developed core transaction processing services using Java, Spring Boot, and Kafka, ensuring high fault tolerance, strict security compliance, and sub-second response times under heavy load.',
-      category: 'Backend',
-      tags: ['Java', 'Spring Boot', 'Kafka', 'PostgreSQL', 'Docker'],
-      githubUrl: 'https://github.com',
+        'Splits event publishing (venda-ingressosProducer) and downstream processing (processamento-vendasConsumer) over message broker topics/queues to isolate load, handle concurrency, and support resilient consumer retries.',
+      category: 'Architecture',
+      tags: ['Java', 'Event-Driven', 'Messaging', 'Async Processing', 'Backend'],
+      githubUrl: 'https://github.com/tiglinux/processamento-vendasConsumer',
       featured: true,
       imageBg: 'bg-gradient-to-br from-blue-900 to-indigo-950',
     },
     {
-      id: 'fintech-app',
-      title: 'Mobile Banking Android App',
+      id: 'java-backend-spring',
+      title: 'Spring Backend Core API',
       description:
-        'Modern, secure native Android application built with Kotlin and Jetpack Compose for retail banking clients.',
+        'Layered Java backend service built on the Spring ecosystem for RESTful operations, validation, and persistence.',
       longDescription:
-        'Engineered a highly responsive mobile interface with biometric authentication, real-time transaction tracking, and offline-first data caching using Room database and Coroutines.',
-      category: 'Full Stack',
-      tags: ['Kotlin', 'Android', 'Jetpack Compose', 'REST API'],
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
+        'Structures controller, service, and repository layers with domain rules, DTO mapping, exception handling, and relational data access following Spring conventions.',
+      category: 'Backend',
+      tags: ['Java', 'Spring', 'Spring Boot', 'REST API', 'JPA'],
+      githubUrl: 'https://github.com/tiglinux/Java_Backend_SPRING',
       featured: true,
       imageBg: 'bg-gradient-to-br from-emerald-900 to-teal-950',
     },
     {
-      id: 'dev-dashboard',
-      title: 'Angular Developer Control Center',
+      id: 'angular-ecommerce-platform',
+      title: 'Angular E-Commerce Storefront',
       description:
-        'Dynamic administrative dashboard featuring real-time system health metrics, reactive forms, and advanced data visualization.',
+        'Modular single-page shopping web application built with Angular and TypeScript featuring product catalog, cart state, and checkout flows.',
       longDescription:
-        'Built utilizing Angular Signals, Tailwind CSS, and RxJS for optimal reactive state flow. Includes dark mode support and modular widget architecture.',
+        'Implements component-driven UI architecture, client-side routing, reactive state management for shopping cart operations, product filtering, and REST API service integration.',
       category: 'Frontend',
-      tags: ['Angular', 'TypeScript', 'Tailwind CSS', 'Signals'],
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
+      tags: ['Angular', 'TypeScript', 'RxJS', 'SPA', 'E-Commerce'],
+      githubUrl: 'https://github.com/tiglinux/site-de-compras-angular',
+      featured: true,
+      imageBg: 'bg-gradient-to-br from-rose-900 to-slate-950',
+    },
+    {
+      id: 'bookstore-manager',
+      title: 'Bookstore Domain Management System',
+      description:
+        'Domain-centric backend application managing catalog entities, relationships, and business rules for a bookstore.',
+      longDescription:
+        'Implements relational entity modeling, service-layer business validations, DTOs, structured error responses, and automated test coverage around book and catalog operations.',
+      category: 'Backend',
+      tags: ['Java', 'Spring Boot', 'REST API', 'Relational DB', 'Testing'],
+      githubUrl: 'https://github.com/tiglinux/bookstoremanager',
       featured: false,
       imageBg: 'bg-gradient-to-br from-purple-900 to-slate-950',
     },
     {
-      id: 'microservices-mesh',
-      title: 'Cloud-Native Microservices Mesh',
+      id: 'jdbc-jpa-persistence',
+      title: 'Car Rental (JDBC) & Student Registry (JPA)',
       description:
-        'Scalable distributed backend architecture leveraging Quarkus and reactive messaging patterns for automotive supply chain.',
+        'Dual persistence implementations contrasting low-level SQL/JDBC control with ORM entity lifecycle management via JPA.',
       longDescription:
-        'Designed cloud-ready microservices with containerization support, distributed tracing, circuit breakers, and automated CI/CD pipelines.',
-      category: 'Architecture',
-      tags: ['Quarkus', 'Java', 'Docker', 'Kubernetes', 'CI/CD'],
-      githubUrl: 'https://github.com',
+        'Combines explicit SQL queries, connection management, and manual ResultSet mapping in vehicle rental rules with object-relational mapping and entity state management in JPA.',
+      category: 'Backend',
+      tags: ['Java', 'JDBC', 'JPA', 'SQL', 'ORM'],
+      githubUrl: 'https://github.com/tiglinux/LocadoraCarrosJDBC',
       featured: false,
       imageBg: 'bg-gradient-to-br from-amber-900 to-slate-950',
+    },
+    {
+      id: 'inventory-product-systems',
+      title: 'Inventory & Product Catalog Systems',
+      description:
+        'Operational business systems handling product catalogs, stock balance updates, query filters, and domain validations.',
+      longDescription:
+        'Covers inventory movement rules, stock consistency checks, and product CRUD/search workflows across Sistema_Estoque and sistema-produtos.',
+      category: 'Backend',
+      tags: ['Java', 'Backend', 'Business Rules', 'SQL', 'CRUD'],
+      githubUrl: 'https://github.com/tiglinux/Sistema_Estoque',
+      featured: false,
+      imageBg: 'bg-gradient-to-br from-cyan-900 to-slate-950',
+    },
+    {
+      id: 'telegram-bot-automation',
+      title: 'Telegram Bot Integration & Automation',
+      description:
+        'External API integration handling Telegram updates, command routing, and automated conversational workflows.',
+      longDescription:
+        'Consumes the Telegram Bot API to parse incoming messages/commands, dispatch handlers, and return automated responses or backend integrations.',
+      category: 'Backend',
+      tags: ['Bot API', 'Webhooks / Polling', 'Automation', 'Integration'],
+      githubUrl: 'https://github.com/tiglinux/TelegramBot',
+      featured: false,
+      imageBg: 'bg-gradient-to-br from-sky-900 to-slate-950',
+    },
+    {
+      id: 'contacts-application',
+      title: 'Contacts Management Application',
+      description:
+        'Cleanly layered contact management application focused on CRUD operations and modular separation of concerns.',
+      longDescription:
+        'Organizes data models, persistence, and application logic into clear layers for creating, querying, updating, and removing contact records.',
+      category: 'Full Stack',
+      tags: ['CRUD', 'Layered Architecture', 'Data Modeling'],
+      githubUrl: 'https://github.com/tiglinux/contacts_application',
+      featured: false,
+      imageBg: 'bg-gradient-to-br from-slate-800 to-zinc-950',
     },
   ];
 
@@ -1106,82 +1169,444 @@ export class App implements AfterViewInit, OnDestroy {
   experiencesData = {
     PT: [
       {
-        role: 'Senior Software Engineer / Tech Lead',
-        company: 'Grandes Corporações & Instituições Financeiras',
-        period: '2018 - Presente',
-        location: 'São Paulo / Remoto',
-        type: 'PJ / CLT',
-        highlights: [
-          'Liderança técnica e desenvolvimento de sistemas backend críticos para o setor bancário (CAIXA, Santander, Bradesco, Crefisa).',
-          'Arquitetura e implementação de microsserviços resilientes utilizando Java, Spring Boot e Quarkus, garantindo alta escalabilidade.',
-          'Implementação de testes automatizados avançados e BDD, reduzindo drasticamente taxas de defeito em produção.',
-        ],
-        skills: ['Java', 'Spring Boot', 'Quarkus', 'Kotlin', 'Microservices', 'BDD', 'Kafka'],
-      },
-      {
-        role: 'Senior Full Stack & Android Developer',
-        company: 'Consultorias de Tecnologia & Indústria Automotiva',
-        period: '2012 - 2018',
-        location: 'São Paulo / Sorocaba',
+        role: 'Senior Software Engineer | Analista de Baixa Plataforma',
+        company: 'Engesoftware Tecnologia S/A (Caixa Econômica Federal)',
+        period: '2026',
+        location: 'Brasil',
         type: 'CLT',
         highlights: [
-          'Desenvolvimento de aplicações mobile Android nativas de alta performance e integração com APIs corporativas.',
-          'Criação de dashboards web responsivos e ferramentas internas utilizando Angular e ecossistema JavaScript/TypeScript.',
-          'Atuação em equipes ágeis (Scrum/Kanban) participando ativamente do desenho de arquitetura e code reviews.',
+          'Desenvolvimento Full Stack da nova plataforma SIBEC3 (Sistema de Benefícios ao Cidadão) para a Caixa Econômica Federal e o Governo Federal, conduzindo a migração de regras do sistema legado (SIBEC2) e integrações alinhadas às regras do PIX/BACEN.',
+          'Construção de microsserviços e APIs RESTful em Java com Quarkus (padrões MVC, DTO, Clean Code, SOLID e Clean Architecture), desenvolvimento de interfaces em Angular 20 e criação de queries SQL e Stored Procedures no Data Studio.',
+          'Operação de pipelines CI/CD no Azure DevOps e infraestrutura na Azure Cloud, garantindo qualidade de código com JUnit, Mockito e TDD, observabilidade, sustentação em produção e participação em cerimônias ágeis.',
         ],
-        skills: ['Android', 'Kotlin', 'Java', 'Angular', 'TypeScript', 'SQL', 'Agile'],
+        skills: [
+          'Java',
+          'Quarkus',
+          'Angular 20',
+          'SQL',
+          'Stored Procedures',
+          'Azure DevOps',
+          'Azure Cloud',
+          'Microsserviços',
+          'JUnit',
+          'Mockito',
+          'TDD',
+          'Clean Architecture',
+          'SOLID',
+          'Clean Code',
+          'Scrum',
+        ],
       },
+
+      {
+        role: 'Senior Software Engineer | Backend Developer',
+        company: 'Leega (Banco Crefisa)',
+        period: 'Out 2025 - Abr 2026',
+        location: 'Brasil',
+        type: 'CLT',
+        highlights: [
+          'Desenvolvimento backend sênior para o novo projeto de PIX e Empréstimos do Banco Crefisa (em conformidade com as regras do BACEN), construindo microsserviços e APIs RESTful com Java, Spring Boot, AWS (Lambda, EC2, DynamoDB), PostgreSQL e MongoDB.',
+          'Implementação de comunicação assíncrona baseada em eventos com Apache Kafka e mensageria MQ, além de segurança da informação com criptografia e autenticação JWT.',
+          'Garantia de qualidade e alta disponibilidade por meio de Code Review, testes unitários (JUnit, Mockito, TDD) sob princípios Clean Architecture e SOLID, e observabilidade com Kibana, Dynatrace e AWS CloudWatch.',
+        ],
+        skills: [
+          'Java',
+          'Spring Boot',
+          'AWS (Lambda, EC2, DynamoDB)',
+          'Apache Kafka',
+          'MQ',
+          'JWT',
+          'PostgreSQL',
+          'MongoDB',
+          'JUnit',
+          'Mockito',
+          'TDD',
+          'Clean Architecture',
+          'SOLID',
+          'Kibana',
+          'Dynatrace',
+          'AWS CloudWatch',
+          'Scrum',
+        ],
+      },
+
+      {
+        role: 'Senior Software Engineer | Fullstack Developer',
+        company: 'Leega (Banco Santander)',
+        period: 'Fev 2024 - Out 2025',
+        location: 'São Paulo, Brasil',
+        type: 'CLT',
+        highlights: [
+          'Atuação sênior no projeto de cartões de débito e crédito (PLARD/PAMPA) do Banco Santander, desenvolvendo microsserviços bancários, APIs RESTful e padrão BFF com Java, Spring Boot, Hibernate, Angular e OpenAPI/YAML.',
+          'Integração de sistemas legados e modernos com Apache Camel e Apache Kafka, além de soluções em nuvem com Docker e AWS (Lambda, EC2, SDK e DynamoDB) integradas a bancos MySQL, PostgreSQL e NoSQL.',
+          'Criação de frameworks de testes automatizados (BDD, Rest Assured e Selenium) e ferramentas internas para geração de dados de cartões em homologação, garantindo qualidade com Code Review, SonarQube e observabilidade via Kibana, Dynatrace e AWS CloudWatch.',
+        ],
+        skills: [
+          'Java',
+          'Spring Boot',
+          'Hibernate',
+          'Angular',
+          'OpenAPI/YAML',
+          'Apache Camel',
+          'Apache Kafka',
+          'BDD',
+          'Rest Assured',
+          'Selenium',
+          'Docker',
+          'AWS (Lambda, EC2, DynamoDB)',
+          'MySQL',
+          'PostgreSQL',
+          'SonarQube',
+          'Kibana',
+          'Dynatrace',
+          'AWS CloudWatch',
+          'Scrum',
+        ],
+      },
+
+      {
+        role: 'Embedded Software Developer JAVA | Android Developer',
+        company: 'Formel D Group (CNH Industrial)',
+        period: 'Fev 2023 - Jul 2024',
+        location: 'Brasil',
+        type: 'CLT',
+        highlights: [
+          'Atuação como consultor Android em sistemas embarcados para a CNH Industrial, integrando o time global do projeto "Yield-Monitor" e desenvolvendo o aplicativo FieldOps para colheitadeiras CaseIH e New Holland.',
+          'Desenvolvimento e manutenção de displays automotivos nativos com Java e Kotlin (Clean Architecture e MVVM), garantindo qualidade com Code Review e testes unitários (JUnit, Mockito e TDD).',
+          'Simulação de operações de colheita com Vector CANalyzer, operação de esteiras CI/CD (Jenkins, Gerrit, SonarQube, Artifactory, Polarium) e atuação em times multiculturais seguindo SAFe e Scrum.',
+        ],
+        skills: [
+          'Java',
+          'Kotlin',
+          'Android',
+          'Clean Architecture',
+          'MVVM',
+          'JUnit',
+          'Mockito',
+          'TDD',
+          'Vector CANalyzer',
+          'Jenkins',
+          'Gerrit',
+          'Git',
+          'SonarQube',
+          'Artifactory',
+          'Polarium',
+          'SAFe',
+          'Scrum',
+        ],
+      },
+
+      {
+        role: 'Software Engineer | Full Stack Developer',
+        company: 'Capgemini',
+        period: 'Fev 2020 - Jun 2023',
+        location: 'Brasil',
+        type: 'CLT',
+        highlights: [
+          'Desenvolvimento Full Stack (Java, Spring Boot, Angular, JSF) e microsserviços em nuvem (AWS SDK e Lambda) para projetos bancários do Banco Bradesco (CaaS, Seguros, WDE e Internet Banking).',
+          'Atuação como instrutor técnico de Java e mentor no programa Capgemini Start, conduzindo reuniões técnicas, revisões de código (Code Review) e testes unitários com JUnit, Mockito e TDD.',
+          'Manipulação de bancos de dados SQL, containerização de ambientes com Docker Compose e participação ativa em cerimônias ágeis (Scrum) com alinhamento direto ao cliente.',
+        ],
+        skills: [
+          'Java',
+          'Spring Boot',
+          'Angular',
+          'AWS',
+          'Docker',
+          'SQL',
+          'JPA/Hibernate',
+          'JSF',
+          'JUnit',
+          'Mockito',
+          'TDD',
+          'Scrum',
+        ],
+      },
+
+      {
+        role: 'Android Developer',
+        company: 'Mogai Tecnologia (Bolsista FAPES)',
+        period: '2019 (6 meses)',
+        location: 'Brasil',
+        type: 'Contrato Temporário',
+        highlights: [
+          'Desenvolvimento e evolução do aplicativo Hammerhead em Android nativo (Kotlin e Java), criando layouts responsivos com XML, ConstraintLayout e LinearLayout.',
+          'Implementação de geolocalização em tempo real (GPS e Google Maps API), recursos avançados de gravação de tela e testes unitários com JUnit e TDD.',
+        ],
+        skills: ['Kotlin', 'Java', 'Android', 'XML', 'Google Maps API', 'GPS', 'JUnit', 'TDD'],
+      },
+
+      {
+        role: 'Mobile Full Stack Developer',
+        company: 'Grupo 5S',
+        period: 'A definir',
+        location: 'Brasil',
+        type: 'CLT',
+        highlights: [
+          'Desenvolvimento de aplicações mobile híbridas (Ionic, Angular, TypeScript) e nativas para Android (Kotlin, Java).',
+          'Manutenção e evolução de aplicações Full Stack, criação de interfaces web responsivas e desenvolvimento de chatbot integrado ao Telegram.',
+        ],
+        skills: ['Ionic', 'Angular', 'TypeScript', 'Kotlin', 'Java', 'Android', 'Full Stack'],
+      },
+
       {
         role: 'Software Developer',
-        company: 'Projetos de Software & Inovação',
+        company: 'ClickSoft',
+        period: '2019',
+        location: 'Brasil',
+        type: 'Contrato Temporário',
+        highlights: [
+          'Desenvolvimento de sistemas web e manutenção de sistemas de cadastro em PHP e MySQL utilizando o framework CakePHP.',
+          'Criação e implementação de novas interfaces para aplicativos mobile.',
+        ],
+        skills: ['PHP', 'MySQL', 'CakePHP', 'Ionic', 'React Native'],
+      },
+
+      {
+        role: 'Python Developer',
+        company: 'FAPES (Fundação de Amparo à Pesquisa do Espírito Santo)',
+        period: '2018',
+        location: 'Brasil',
+        type: 'Contrato Temporário',
+        highlights: [
+          'Desenvolvimento backend de novo sistema educacional utilizando Python e Django.',
+          'Criação de interfaces responsivas e interativas com Bootstrap, CSS e manipulação de DOM via JavaScript.',
+        ],
+        skills: ['Python', 'Django', 'Bootstrap', 'HTML/CSS', 'JavaScript'],
+      },
+
+      {
+        role: 'Full Stack Developer',
+        company: 'VixSystem Soluções em Tecnologia',
         period: '2010 - 2012',
         location: 'Brasil',
         type: 'CLT',
         highlights: [
-          'Desenvolvimento de aplicações corporativas orientadas a banco de dados relacionais.',
-          'Manutenção e refatoração de sistemas legados, melhorando performance e legibilidade de código.',
+          'Desenvolvimento de dashboard corporativo online para Companhia Espírito Santense de Saneamento(CESAN)',
+          'Desenvolvimento de sistema responsivo e manutenção de sistemas legados, melhorando performance e legibilidade de código.',
         ],
-        skills: ['Java', 'SQL', 'HTML/CSS', 'JavaScript'],
+        skills: ['Java', 'SQL', 'HTML/CSS', 'JavaScript', 'JSP', 'Servlets', 'AngularJS'],
       },
     ],
     EN: [
       {
-        role: 'Senior Software Engineer / Tech Lead',
-        company: 'Major Corporations & Financial Institutions',
-        period: '2018 - Present',
-        location: 'São Paulo / Remote',
-        type: 'Contract / Full-time',
+        role: 'Senior Software Engineer | Low-Platform Analyst',
+        company: 'Engesoftware Tecnologia S/A (Caixa Econômica Federal)',
+        period: '2026',
+        location: 'Brazil',
+        type: 'Full-time (CLT)',
         highlights: [
-          'Technical leadership and development of critical backend systems for the banking sector (CAIXA, Santander, Bradesco, Crefisa).',
-          'Architecture and implementation of resilient microservices using Java, Spring Boot, and Quarkus, ensuring high scalability.',
-          'Implementation of advanced automated testing and BDD, drastically reducing production defect rates.',
+          'Full Stack development of the new SIBEC3 citizen benefits platform for Caixa Econômica Federal and the Federal Government, leading legacy rule migration (SIBEC2) and PIX/BACEN-compliant integrations.',
+          'Built microservices and RESTful APIs in Java with Quarkus (Clean Architecture, SOLID, Clean Code), Angular 20 UIs, and SQL queries/Stored Procedures in Data Studio.',
+          'Managed CI/CD pipelines on Azure DevOps and Azure Cloud infrastructure, ensuring quality with JUnit, Mockito, TDD, observability, and production support in Scrum teams.',
         ],
-        skills: ['Java', 'Spring Boot', 'Quarkus', 'Kotlin', 'Microservices', 'BDD', 'Kafka'],
+        skills: [
+          'Java',
+          'Quarkus',
+          'Angular 20',
+          'SQL',
+          'Stored Procedures',
+          'Azure DevOps',
+          'Azure Cloud',
+          'Microservices',
+          'JUnit',
+          'Mockito',
+          'TDD',
+          'Clean Architecture',
+          'SOLID',
+          'Clean Code',
+          'Scrum',
+        ],
       },
+
       {
-        role: 'Senior Full Stack & Android Developer',
-        company: 'Tech Consultancies & Automotive Industry',
-        period: '2012 - 2018',
-        location: 'São Paulo / Remote',
-        type: 'Full-time',
+        role: 'Senior Software Engineer | Backend Developer',
+        company: 'Leega (Banco Crefisa)',
+        period: 'Oct 2025 - Apr 2026',
+        location: 'Brazil',
+        type: 'Full-time (CLT)',
         highlights: [
-          'Development of high-performance native Android mobile applications integrated with corporate APIs.',
-          'Creation of responsive web dashboards and internal tools using Angular and the JavaScript/TypeScript ecosystem.',
-          'Worked in agile teams (Scrum/Kanban) actively participating in architecture design and code reviews.',
+          'Senior backend development for Banco Crefisa’s new PIX and Loans platform (BACEN compliant), building microservices and RESTful APIs with Java, Spring Boot, AWS (Lambda, EC2, DynamoDB), PostgreSQL, and MongoDB.',
+          'Implemented event-driven asynchronous messaging with Apache Kafka and MQ, alongside security using encryption and JWT authentication.',
+          'Ensured high availability and code quality through Code Reviews, TDD (JUnit, Mockito), Clean Architecture/SOLID principles, and observability via Kibana, Dynatrace, and AWS CloudWatch.',
         ],
-        skills: ['Android', 'Kotlin', 'Java', 'Angular', 'TypeScript', 'SQL', 'Agile'],
+        skills: [
+          'Java',
+          'Spring Boot',
+          'AWS (Lambda, EC2, DynamoDB)',
+          'Apache Kafka',
+          'MQ',
+          'JWT',
+          'PostgreSQL',
+          'MongoDB',
+          'JUnit',
+          'Mockito',
+          'TDD',
+          'Clean Architecture',
+          'SOLID',
+          'Kibana',
+          'Dynatrace',
+          'AWS CloudWatch',
+          'Scrum',
+        ],
       },
+
+      {
+        role: 'Senior Software Engineer | Fullstack Developer',
+        company: 'Leega (Banco Santander)',
+        period: 'Feb 2024 - Oct 2025',
+        location: 'São Paulo, Brazil',
+        type: 'Full-time (CLT)',
+        highlights: [
+          'Senior developer on Banco Santander’s debit/credit card project (PLARD/PAMPA), building banking microservices, RESTful APIs, and BFFs using Java, Spring Boot, Hibernate, Angular, and OpenAPI/YAML.',
+          'Integrated legacy and modern systems with Apache Camel and Kafka, deploying cloud solutions with Docker and AWS (Lambda, EC2, SDK, DynamoDB) across MySQL, PostgreSQL, and NoSQL databases.',
+          'Created automated testing frameworks (BDD, Rest Assured, Selenium) and internal test-data tools, maintaining quality via SonarQube, Kibana, Dynatrace, and AWS CloudWatch.',
+        ],
+        skills: [
+          'Java',
+          'Spring Boot',
+          'Hibernate',
+          'Angular',
+          'OpenAPI/YAML',
+          'Apache Camel',
+          'Apache Kafka',
+          'BDD',
+          'Rest Assured',
+          'Selenium',
+          'Docker',
+          'AWS (Lambda, EC2, DynamoDB)',
+          'MySQL',
+          'PostgreSQL',
+          'SonarQube',
+          'Kibana',
+          'Dynatrace',
+          'AWS CloudWatch',
+          'Scrum',
+        ],
+      },
+
+      {
+        role: 'Embedded Software Developer JAVA | Android Developer',
+        company: 'Formel D Group (CNH Industrial)',
+        period: 'Feb 2023 - Jul 2024',
+        location: 'Brazil',
+        type: 'Full-time (CLT)',
+        highlights: [
+          'Android embedded systems consultant for CNH Industrial, working on the global "Yield-Monitor" team and developing the FieldOps app for CaseIH and New Holland harvesters.',
+          'Built and maintained native automotive displays in Java and Kotlin (Clean Architecture, MVVM) with JUnit, Mockito, and TDD.',
+          'Simulated harvesting operations with Vector CANalyzer, operated CI/CD pipelines (Jenkins, Gerrit, SonarQube, Artifactory, Polarium), and collaborated in multicultural SAFe/Scrum teams.',
+        ],
+        skills: [
+          'Java',
+          'Kotlin',
+          'Android',
+          'Clean Architecture',
+          'MVVM',
+          'JUnit',
+          'Mockito',
+          'TDD',
+          'Vector CANalyzer',
+          'Jenkins',
+          'Gerrit',
+          'Git',
+          'SonarQube',
+          'Artifactory',
+          'Polarium',
+          'SAFe',
+          'Scrum',
+        ],
+      },
+
+      {
+        role: 'Software Engineer | Full Stack Developer',
+        company: 'Capgemini',
+        period: 'Feb 2020 - Jun 2023',
+        location: 'Brazil',
+        type: 'Full-time (CLT)',
+        highlights: [
+          'Full Stack development (Java, Spring Boot, Angular, JSF) and cloud microservices (AWS SDK, Lambda) for Banco Bradesco banking projects (CaaS, Insurance, WDE, Internet Banking).',
+          'Served as a Java technical instructor and mentor in the Capgemini Start program, leading code reviews and unit testing (JUnit, Mockito, TDD).',
+          'Managed SQL databases, containerized environments with Docker Compose, and collaborated directly with clients in Scrum ceremonies.',
+        ],
+        skills: [
+          'Java',
+          'Spring Boot',
+          'Angular',
+          'AWS',
+          'Docker',
+          'SQL',
+          'JPA/Hibernate',
+          'JSF',
+          'JUnit',
+          'Mockito',
+          'TDD',
+          'Scrum',
+        ],
+      },
+
+      {
+        role: 'Android Developer',
+        company: 'Mogai Tecnologia (FAPES Fellow)',
+        period: '2019 (6 months)',
+        location: 'Brazil',
+        type: 'Temporary Contract',
+        highlights: [
+          'Developed and evolved the native Android Hammerhead app (Kotlin, Java) with responsive XML layouts.',
+          'Implemented real-time geolocation (GPS, Google Maps API), screen recording features, and unit tests with JUnit and TDD.',
+        ],
+        skills: ['Kotlin', 'Java', 'Android', 'XML', 'Google Maps API', 'GPS', 'JUnit', 'TDD'],
+      },
+
+      {
+        role: 'Mobile Full Stack Developer',
+        company: 'Grupo 5S',
+        period: 'TBD',
+        location: 'Brazil',
+        type: 'Full-time (CLT)',
+        highlights: [
+          'Developed hybrid (Ionic, Angular, TypeScript) and native Android (Kotlin, Java) mobile applications.',
+          'Maintained Full Stack systems, built responsive web interfaces, and developed a Telegram-integrated chatbot.',
+        ],
+        skills: ['Ionic', 'Angular', 'TypeScript', 'Kotlin', 'Java', 'Android', 'Full Stack'],
+      },
+
       {
         role: 'Software Developer',
-        company: 'Software & Innovation Projects',
+        company: 'ClickSoft',
+        period: '2019',
+        location: 'Brazil',
+        type: 'Temporary Contract',
+        highlights: [
+          'Developed and maintained web registration systems in PHP and MySQL using the CakePHP framework.',
+          'Designed and implemented new UIs for mobile applications.',
+        ],
+        skills: ['PHP', 'MySQL', 'CakePHP', 'Ionic', 'React Native'],
+      },
+
+      {
+        role: 'Python Developer',
+        company: 'FAPES (Espírito Santo Research Foundation)',
+        period: '2018',
+        location: 'Brazil',
+        type: 'Temporary Contract',
+        highlights: [
+          'Backend development of a new educational platform using Python and Django.',
+          'Built responsive, interactive frontends with Bootstrap, CSS, and JavaScript DOM manipulation.',
+        ],
+        skills: ['Python', 'Django', 'Bootstrap', 'HTML/CSS', 'JavaScript'],
+      },
+
+      {
+        role: 'Full Stack Developer',
+        company: 'VixSystem Soluções em Tecnologia',
         period: '2010 - 2012',
         location: 'Brazil',
-        type: 'Full-time',
+        type: 'Full-time (CLT)',
         highlights: [
-          'Development of corporate relational database-driven applications.',
-          'Maintenance and refactoring of legacy systems, improving performance and code readability.',
+          'Developed an online corporate dashboard for CESAN (Espírito Santo Sanitation Company).',
+          'Built responsive systems and maintained legacy codebases, improving performance and code readability.',
         ],
-        skills: ['Java', 'SQL', 'HTML/CSS', 'JavaScript'],
+        skills: ['Java', 'SQL', 'HTML/CSS', 'JavaScript', 'JSP', 'Servlets', 'AngularJS'],
       },
     ],
   };
