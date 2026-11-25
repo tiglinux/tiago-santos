@@ -1,3 +1,4 @@
+
 import {
   Component,
   ChangeDetectionStrategy,
@@ -11,6 +12,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import emailjs from '@emailjs/browser';
 
 interface Skill {
   name: string;
@@ -227,105 +229,115 @@ interface Experience {
       <main class="w-full min-w-0 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 py-12">
         <!-- HERO SECTION -->
         <!-- HERO SECTION -->
-<section id="hero" class="min-h-[85vh] flex flex-col justify-center pt-6">
-  <div class="grid lg:grid-cols-12 gap-12 items-center">
-    <!-- Hero Text Content -->
-    <div class="lg:col-span-7 flex flex-col items-start">
-      <div
-        class="max-w-full inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-mono text-xs font-semibold mb-6"
-      >
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        {{ t().hero.badge }}
-      </div>
+        <section id="hero" class="min-h-[85vh] flex flex-col justify-center pt-6">
+          <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <!-- Hero Text Content -->
+            <div class="lg:col-span-7 flex flex-col items-start">
+              <div
+                class="max-w-full inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-mono text-xs font-semibold mb-6"
+              >
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                {{ t().hero.badge }}
+              </div>
 
-      <h1
-        class="max-w-full break-words [overflow-wrap:anywhere] text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight"
-      >
-        {{ t().hero.greeting }}
-        <span class="text-indigo-600 dark:text-indigo-400">Tiago Santos</span>.<br />
-        {{ t().hero.building }}
-        <span class="border-b-4 border-indigo-500/60 pb-1">{{ currentText() }}</span
-        ><span class="animate-pulse font-light text-indigo-500">|</span>
-      </h1>
+              <h1
+                class="max-w-full break-words [overflow-wrap:anywhere] text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight"
+              >
+                {{ t().hero.greeting }}
+                <span class="text-indigo-600 dark:text-indigo-400">Tiago Santos</span>.<br />
+                {{ t().hero.building }}
+                <span class="border-b-4 border-indigo-500/60 pb-1">{{ currentText() }}</span><span
+                  class="animate-pulse font-light text-indigo-500"
+                  >|</span
+                >
+              </h1>
 
-      <p
-        class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mb-8 leading-relaxed"
-        [innerHTML]="t().hero.bio"
-      ></p>
+              <p
+                class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mb-8 leading-relaxed"
+                [innerHTML]="t().hero.bio"
+              ></p>
 
-      <div class="flex flex-wrap gap-4 items-center">
-        <a
-          href="#projects"
-          class="px-6 py-3 rounded-xl font-medium text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-500/25 flex items-center gap-2"
-        >
-          {{ t().hero.viewWork }}
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            ></path>
-          </svg>
-        </a>
-        <a
-          href="#contact"
-          class="px-6 py-3 rounded-xl font-medium text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all"
-        >
-          {{ t().hero.contactMe }}
-        </a>
-      </div>
-    </div>
+              <div class="flex flex-wrap gap-4 items-center">
+                <a
+                  href="#projects"
+                  class="px-6 py-3 rounded-xl font-medium text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-500/25 flex items-center gap-2"
+                >
+                  {{ t().hero.viewWork }}
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  href="#contact"
+                  class="px-6 py-3 rounded-xl font-medium text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all"
+                >
+                  {{ t().hero.contactMe }}
+                </a>
+              </div>
+            </div>
 
-    <!-- Hero Profile Image -->
-    <div class="lg:col-span-5 flex justify-center lg:justify-end">
-      <div class="relative group w-64 sm:w-80 max-w-full">
-        <div
-          class="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-indigo-600 via-purple-500 to-cyan-400 opacity-35 blur-lg group-hover:opacity-60 transition duration-500"
-        ></div>
-        <div
-          class="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900 shadow-2xl aspect-[3/4]"
-        >
-          <img
-            src="foto.png"
-            alt="Tiago Santos"
-            class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
+            <!-- Hero Profile Image -->
+            <div class="lg:col-span-5 flex justify-center lg:justify-end">
+              <div class="relative group w-64 sm:w-80 max-w-full">
+                <div
+                  class="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-indigo-600 via-purple-500 to-cyan-400 opacity-35 blur-lg group-hover:opacity-60 transition duration-500"
+                ></div>
+                <div
+                  class="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900 shadow-2xl aspect-[3/4]"
+                >
+                  <img
+                    src="foto.png"
+                    alt="Tiago Santos"
+                    class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Quick Stats Bar -->
-  <div
-    class="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full mt-16 pt-8 border-t border-slate-200 dark:border-slate-800"
-  >
-    <div>
-      <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">15+</div>
-      <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
-        {{ t().hero.stats.exp }}
-      </div>
-    </div>
-    <div>
-      <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">30+</div>
-      <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
-        {{ t().hero.stats.projects }}
-      </div>
-    </div>
-    <div>
-      <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">99%</div>
-      <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
-        {{ t().hero.stats.uptime }}
-      </div>
-    </div>
-    <div>
-      <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">100%</div>
-      <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
-        {{ t().hero.stats.code }}
-      </div>
-    </div>
-  </div>
-</section>
+          <!-- Quick Stats Bar -->
+          <div
+            class="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full mt-16 pt-8 border-t border-slate-200 dark:border-slate-800"
+          >
+            <div>
+              <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">
+                15+
+              </div>
+              <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
+                {{ t().hero.stats.exp }}
+              </div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">
+                30+
+              </div>
+              <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
+                {{ t().hero.stats.projects }}
+              </div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">
+                99%
+              </div>
+              <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
+                {{ t().hero.stats.uptime }}
+              </div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold font-mono text-indigo-600 dark:text-indigo-400">
+                100%
+              </div>
+              <div class="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
+                {{ t().hero.stats.code }}
+              </div>
+            </div>
+          </div>
+        </section>
 
         <!-- ABOUT SECTION -->
         <section id="about" class="scroll-mt-24">
@@ -1615,6 +1627,7 @@ export class App implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this.startTypewriter();
+    emailjs.init({ publicKey: 'Etm16HPjh38Xpc2bu' });
   }
 
   ngOnDestroy() {
@@ -1668,13 +1681,32 @@ export class App implements AfterViewInit, OnDestroy {
     }, 80);
   }
 
-  onSubmitContact() {
+  async onSubmitContact() {
     if (this.contactForm.valid) {
-      this.submittedSuccess.set(true);
-      this.contactForm.reset();
-      setTimeout(() => {
-        this.submittedSuccess.set(false);
-      }, 5000);
+      const { name, email, message } = this.contactForm.value;
+
+      try {
+        await emailjs.send(
+          'service_kvylvqj',
+          'template_hsdj3io',
+          {
+            name: name,
+            email: email,
+            message: message,
+          },
+          {
+            publicKey: 'Etm16HPjh38Xpc2bu',
+          },
+        );
+
+        this.submittedSuccess.set(true);
+        this.contactForm.reset();
+        setTimeout(() => {
+          this.submittedSuccess.set(false);
+        }, 5000);
+      } catch (error) {
+        console.error('Erro ao enviar e-mail via EmailJS:', error);
+      }
     }
   }
 }
